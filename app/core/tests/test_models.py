@@ -74,5 +74,3 @@ class ModelTests(TestCase):
         tag = Tag.objects.create(user=user, name='New Tag')
 
         self.assertEqual(str(tag), tag.name)
-
-asas
