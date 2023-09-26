@@ -5,7 +5,8 @@ from decimal import Decimal
 
 from core.models import (
     Recipe,
-    Tag
+    Tag,
+    Ingredient
 )
 
 
@@ -74,3 +75,12 @@ class ModelTests(TestCase):
         tag = Tag.objects.create(user=user, name='New Tag')
 
         self.assertEqual(str(tag), tag.name)
+
+    def test_create_ingredient(self):
+        user = create_user()
+        ingredient = Ingredient.objects.create(
+            user=user,
+            name='New Ingredient'
+        )
+
+        self.assertEqual(str(ingredient), ingredient.name)
